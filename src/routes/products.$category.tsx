@@ -1,11 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { CATEGORIES, PRODUCTS, VEGETABLES } from "@/lib/products";
+import { CATEGORIES, PRODUCTS, VEGETABLES, type Product, type ProductCategory } from "@/lib/products";
 import { ArrowRight, ShoppingBag } from "lucide-react";
 
 export const Route = createFileRoute("/products/$category")({
-  loader: ({ params }) => {
+  loader: ({ params }): { cat: ProductCategory; products: Product[] } => {
     const cat = CATEGORIES.find((c) => c.slug === params.category);
     if (!cat) throw notFound();
     return { cat, products: PRODUCTS.filter((p) => p.category === params.category) };
