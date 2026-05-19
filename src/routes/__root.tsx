@@ -8,7 +8,6 @@ import {
   Scripts,
   ScriptOnce,
 } from "@tanstack/react-router";
-import { CartProvider } from "@/lib/cart";
 
 import appCss from "../styles.css?url";
 
@@ -66,10 +65,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Naturalis Water & Beverages — Premium Hydration & Healthy Foods" },
       { name: "description", content: "Naturalis Water and Beverages and Leaf & Grains Pvt Ltd — premium packaged drinking water, alkaline water, sodas, sauces, fresh produce and ready-to-eat foods from Northeast India." },
       { name: "theme-color", content: "#0a1530" },
-      { property: "og:title", content: "Naturalis — Premium Hydration & Healthy Foods" },
-      { property: "og:description", content: "Export-grade packaged water, beverages and farm-fresh foods." },
+      { property: "og:title", content: "Naturalis Water & Beverages — Premium Hydration & Healthy Foods" },
+      { property: "og:description", content: "Naturalis Water and Beverages and Leaf & Grains Pvt Ltd — premium packaged drinking water, alkaline water, sodas, sauces, fresh produce and ready-to-eat foods from Northeast India." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Naturalis Water & Beverages — Premium Hydration & Healthy Foods" },
+      { name: "twitter:description", content: "Naturalis Water and Beverages and Leaf & Grains Pvt Ltd — premium packaged drinking water, alkaline water, sodas, sauces, fresh produce and ready-to-eat foods from Northeast India." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/32203e6e-30c5-4b4d-a6e1-fca7c36b321b/id-preview-942d92b8--f5f8d208-f994-4034-9271-972f99308241.lovable.app-1779209010867.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/32203e6e-30c5-4b4d-a6e1-fca7c36b321b/id-preview-942d92b8--f5f8d208-f994-4034-9271-972f99308241.lovable.app-1779209010867.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -106,9 +109,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <Outlet />
-      </CartProvider>
+      <Outlet />
     </QueryClientProvider>
   );
 }
