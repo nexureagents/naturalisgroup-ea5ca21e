@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo-nwb.webp";
+import logo from "@/assets/logo-naturalis-main.webp";
 
 export function Footer() {
   return (

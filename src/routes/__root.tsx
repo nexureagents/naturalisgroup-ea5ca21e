@@ -8,6 +8,7 @@ import {
   Scripts,
   ScriptOnce,
 } from "@tanstack/react-router";
+import { CartProvider } from "@/lib/cart";
 
 import appCss from "../styles.css?url";
 
@@ -105,7 +106,9 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <CartProvider>
+        <Outlet />
+      </CartProvider>
     </QueryClientProvider>
   );
 }
