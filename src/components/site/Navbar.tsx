@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import logo from "@/assets/logo-nwb.webp";
+import { useCart } from "@/lib/cart";
+import logo from "@/assets/logo-naturalis-main.webp";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -17,6 +18,7 @@ const NAV = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { count } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -34,13 +36,11 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4">
         <div
           className={`flex items-center justify-between rounded-full px-4 py-2 transition-all duration-500 ${
-            scrolled
-              ? "glass-strong shadow-luxe"
-              : "border border-transparent"
+            scrolled ? "glass-strong shadow-luxe" : "border border-transparent"
           }`}
         >
           <Link to="/" className="flex items-center gap-2.5 group">
-            <img src={logo} alt="Naturalis" className="h-9 w-9 object-contain" />
+            <img src={logo} alt="Naturalis Group" className="h-10 w-10 object-contain" />
             <div className="flex flex-col leading-none">
               <span className="font-display text-sm font-semibold tracking-tight">Naturalis</span>
               <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Water · Leaf · Grains</span>
@@ -63,6 +63,18 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <Link
+              to="/cart"
+              aria-label="Cart"
+              className="relative grid h-10 w-10 place-items-center rounded-full border border-border/60 transition hover:border-primary/50"
+            >
+              <ShoppingBag className="h-4 w-4" />
+              {count > 0 && (
+                <span className="absolute -top-1 -right-1 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 text-[10px] font-semibold text-primary-foreground shadow-luxe">
+                  {count}
+                </span>
+              )}
+            </Link>
             <Link
               to="/order"
               className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground shadow-luxe transition hover:opacity-90"

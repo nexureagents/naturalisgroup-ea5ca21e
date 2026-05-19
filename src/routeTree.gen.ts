@@ -27,6 +27,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsCategoryRouteImport } from './routes/products.$category'
+import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 
 const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
   id: '/terms-and-conditions',
@@ -118,6 +119,11 @@ const ProductsCategoryRoute = ProductsCategoryRouteImport.update({
   path: '/products/$category',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductSlugRoute = ProductSlugRouteImport.update({
+  id: '/product/$slug',
+  path: '/product/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/processing': typeof ProcessingRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/product/$slug': typeof ProductSlugRoute
   '/products/$category': typeof ProductsCategoryRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -156,6 +163,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/processing': typeof ProcessingRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/product/$slug': typeof ProductSlugRoute
   '/products/$category': typeof ProductsCategoryRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -177,6 +185,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/processing': typeof ProcessingRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/product/$slug': typeof ProductSlugRoute
   '/products/$category': typeof ProductsCategoryRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/processing'
     | '/terms-and-conditions'
+    | '/product/$slug'
     | '/products/$category'
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
@@ -219,6 +229,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/processing'
     | '/terms-and-conditions'
+    | '/product/$slug'
     | '/products/$category'
     | '/products'
   id:
@@ -239,6 +250,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/processing'
     | '/terms-and-conditions'
+    | '/product/$slug'
     | '/products/$category'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -260,6 +272,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProcessingRoute: typeof ProcessingRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  ProductSlugRoute: typeof ProductSlugRoute
   ProductsCategoryRoute: typeof ProductsCategoryRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
@@ -392,6 +405,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsCategoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product/$slug': {
+      id: '/product/$slug'
+      path: '/product/$slug'
+      fullPath: '/product/$slug'
+      preLoaderRoute: typeof ProductSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -412,6 +432,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProcessingRoute: ProcessingRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
+  ProductSlugRoute: ProductSlugRoute,
   ProductsCategoryRoute: ProductsCategoryRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }

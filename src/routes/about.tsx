@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import founder from "@/assets/founder-suman-roy.jpg";
-import manufacturing from "@/assets/manufacturing.jpg";
+import founder from "@/assets/founder-suman-roy.webp";
+import manufacturing from "@/assets/factory-2.webp";
 import { ArrowRight, GraduationCap, Briefcase, Lightbulb, Award } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
