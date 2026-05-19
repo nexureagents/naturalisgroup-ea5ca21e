@@ -81,7 +81,7 @@ function ProductPage() {
                 </motion.div>
                 {gallery.length > 1 && (
                   <div className="mt-4 grid grid-cols-4 gap-3">
-                    {gallery.map((g, i) => (
+                    {gallery.map((g: string, i: number) => (
                       <button
                         key={i}
                         onClick={() => setActive(i)}
@@ -149,7 +149,7 @@ function ProductPage() {
                   <div className="mt-12 rounded-3xl border border-border bg-card/60 p-6">
                     <div className="text-xs uppercase tracking-[0.28em] text-emerald">Specifications</div>
                     <ul className="mt-4 space-y-3">
-                      {product.features.map((f) => (
+                      {product.features.map((f: string) => (
                         <li key={f} className="flex items-start gap-3 text-sm">
                           <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald" />
                           <span className="text-foreground/90">{f}</span>
