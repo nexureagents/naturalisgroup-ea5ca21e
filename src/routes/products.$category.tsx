@@ -43,7 +43,7 @@ function CategoryPage() {
         <div className="mx-auto max-w-7xl px-6">
           {products.length > 0 && (
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {products.map((p, i) => (
+              {products.map((p: Product, i: number) => (
                 <Reveal key={p.slug} delay={i * 0.05}>
                   <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-card hover-lift hover:border-primary/40">
                     <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-primary/5 to-emerald/5">
