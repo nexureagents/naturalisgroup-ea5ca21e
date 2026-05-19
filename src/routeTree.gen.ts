@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as ProcessingRouteImport } from './routes/processing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as OrderRouteImport } from './routes/order'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -42,6 +43,11 @@ const ProcessingRoute = ProcessingRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentRoute = PaymentRouteImport.update({
+  id: '/payment',
+  path: '/payment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrderRoute = OrderRouteImport.update({
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/order': typeof OrderRoute
+  '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/processing': typeof ProcessingRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/order': typeof OrderRoute
+  '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/processing': typeof ProcessingRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/order': typeof OrderRoute
+  '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/processing': typeof ProcessingRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/gallery'
     | '/order'
+    | '/payment'
     | '/privacy-policy'
     | '/processing'
     | '/terms-and-conditions'
@@ -226,6 +236,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/gallery'
     | '/order'
+    | '/payment'
     | '/privacy-policy'
     | '/processing'
     | '/terms-and-conditions'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/gallery'
     | '/order'
+    | '/payment'
     | '/privacy-policy'
     | '/processing'
     | '/terms-and-conditions'
@@ -269,6 +281,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
   OrderRoute: typeof OrderRoute
+  PaymentRoute: typeof PaymentRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProcessingRoute: typeof ProcessingRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
@@ -298,6 +311,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment': {
+      id: '/payment'
+      path: '/payment'
+      fullPath: '/payment'
+      preLoaderRoute: typeof PaymentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/order': {
@@ -429,6 +449,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
   OrderRoute: OrderRoute,
+  PaymentRoute: PaymentRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProcessingRoute: ProcessingRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
