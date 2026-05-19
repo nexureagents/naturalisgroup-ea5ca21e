@@ -34,7 +34,8 @@ export function Footer() {
           ]} />
           <FooterCol title="Business" links={[
             ["Become a Distributor", "/distributors"], ["Export Inquiry", "/export"],
-            ["Bulk Order", "/order"], ["Careers", "/careers"], ["Contact", "/contact"],
+            ["Bulk Order", "/order"], ["Payment", "/payment"],
+            ["Careers", "/careers"], ["Contact", "/contact"],
           ]} />
         </div>
 

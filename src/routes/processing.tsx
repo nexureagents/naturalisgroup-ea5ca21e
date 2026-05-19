@@ -1,12 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { ArrowRight, Droplet, Factory, FlaskConical, PackageCheck, Sparkles, Truck } from "lucide-react";
+import { ArrowRight, Droplet, Factory, FlaskConical, PackageCheck, Sparkles, Truck, Maximize2, X } from "lucide-react";
 import factory1 from "@/assets/factory-1.webp";
 import factory2 from "@/assets/factory-2.webp";
 import factory3 from "@/assets/factory-3.webp";
 import factory4 from "@/assets/factory-4.webp";
 import warehouse from "@/assets/warehouse-stock.webp";
+import flowVeg from "@/assets/flowchart-vegetables.webp";
+import flowSauce from "@/assets/flowchart-sauces-jam.webp";
 
 const STAGES = [
   { n: "01", icon: Droplet, t: "Sourcing", d: "Premium raw water from controlled sources and farm-fresh inputs from trusted regional growers." },
@@ -120,6 +123,91 @@ function ProcessingPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Flowcharts */}
+      <FlowchartSection />
     </PageShell>
+  );
+}
+
+const FLOWS = [
+  { src: flowVeg, title: "Processing of Vegetables", caption: "Arrival · grading · washing · cutting · inspection · packing · dispatch — every step documented and quality-controlled." },
+  { src: flowSauce, title: "Sauces, Jam & Juice", caption: "From raw material weighment through CIP, cooking, homogenizing, pasteurizing and final lab-cleared dispatch." },
+];
+
+function FlowchartSection() {
+  const [zoom, setZoom] = useState<string | null>(null);
+  return (
+    <section className="relative border-t border-border/60 py-28">
+      <div className="absolute inset-0 grid-noise opacity-30" />
+      <div className="absolute -top-40 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-emerald/5 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-6">
+        <Reveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/50 px-4 py-1.5 text-xs uppercase tracking-[0.28em] text-muted-foreground backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald" /> Operational Transparency
+            </div>
+            <h2 className="mt-6 font-display text-4xl font-semibold tracking-tight md:text-5xl">Processing Flow Chart</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Visual representation of each stage ensuring hygiene, quality control and efficient production from raw materials to final packaging.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+          {FLOWS.map((f, i) => (
+            <Reveal key={f.title} delay={i * 0.1}>
+              <button
+                type="button"
+                onClick={() => setZoom(f.src)}
+                className="group relative block w-full overflow-hidden rounded-3xl border border-border bg-card text-left shadow-luxe transition hover:border-primary/50 hover-lift"
+              >
+                <div className="flex items-center justify-between gap-4 border-b border-border/60 px-6 py-4">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.28em] text-emerald">Workflow · ISO documented</div>
+                    <div className="mt-0.5 font-display text-lg font-semibold">{f.title}</div>
+                  </div>
+                  <div className="grid h-9 w-9 place-items-center rounded-full border border-border/60 text-muted-foreground transition group-hover:border-primary/50 group-hover:text-primary">
+                    <Maximize2 className="h-4 w-4" />
+                  </div>
+                </div>
+                <div className="relative overflow-hidden bg-white">
+                  <img
+                    src={f.src}
+                    alt={`${f.title} processing flow chart`}
+                    loading="lazy"
+                    className="h-[520px] w-full object-contain p-6 transition duration-700 group-hover:scale-[1.02]"
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/50 to-transparent" />
+                </div>
+                <div className="border-t border-border/60 bg-background/40 px-6 py-4 text-sm text-muted-foreground">{f.caption}</div>
+              </button>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {zoom && (
+        <div
+          className="fixed inset-0 z-[100] grid place-items-center bg-background/90 p-6 backdrop-blur-xl animate-fade-in"
+          onClick={() => setZoom(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            className="absolute top-6 right-6 grid h-12 w-12 place-items-center rounded-full border border-border/70 bg-background/80 text-foreground transition hover:border-primary/50"
+            onClick={() => setZoom(null)}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={zoom}
+            alt="Flowchart zoom"
+            className="max-h-[90vh] max-w-6xl rounded-2xl border border-border bg-white object-contain shadow-luxe"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </section>
   );
 }
