@@ -7,10 +7,16 @@ import alkaline from "@/assets/purelyf-alkaline.webp";
 import bubblz from "@/assets/product-bubblz-soda.jpg";
 import jeera from "@/assets/product-jeera-soda.jpg";
 import orange from "@/assets/product-orange-soda.jpg";
-import ketchup from "@/assets/product-ketchup.jpg";
-import chilliPair from "@/assets/product-chilli-sauces.jpg";
-import soya from "@/assets/product-soya.jpg";
-import vinegar from "@/assets/product-vinegar.jpg";
+import ketchup100 from "@/assets/products/tomato-ketchup-100ml.webp";
+import ketchup200 from "@/assets/products/tomato-ketchup-200ml.webp";
+import ketchup1L from "@/assets/products/tomato-ketchup-1l.webp";
+import greenChilli100 from "@/assets/products/green-chilli-100ml.webp";
+import greenChilli200 from "@/assets/products/green-chilli-200ml.webp";
+import greenChilli1L from "@/assets/products/green-chilli-1l.webp";
+import soya100 from "@/assets/products/soya-sauce-100ml.webp";
+import soya200 from "@/assets/products/soya-sauce-200ml.webp";
+import vinegar100 from "@/assets/products/vinegar-100ml.webp";
+import vinegar200 from "@/assets/products/vinegar-200ml.webp";
 import pineappleJam from "@/assets/product-pineapple-jam.jpg";
 import schezwan from "@/assets/product-schezwan.jpg";
 import papaya from "@/assets/product-papaya.jpg";
@@ -63,12 +69,16 @@ export const PRODUCTS: Product[] = [
   { slug: "bubblz-soda",   name: "Bubblz Soda",          category: "sodas-soft-drinks", image: bubblz, gallery: [bubblz], size: "250 ml", price: 25, description: "Classic crafted soda — clean, crisp and instantly refreshing.", features: ["Naturally carbonated", "Crystal-clear formulation", "No artificial preservatives"] },
   { slug: "jeera-masala-soda", name: "Jeera Masala Soda", category: "sodas-soft-drinks", image: jeera, gallery: [jeera], size: "250 ml", price: 28, description: "Aromatic jeera masala fizz with the warmth of Indian spices.", features: ["Real jeera extract", "Crafted spice blend", "Naturally carbonated"] },
   { slug: "orange-soda",   name: "Orange Soda",          category: "sodas-soft-drinks", image: orange, gallery: [orange], size: "250 ml", price: 28, description: "Bright, juicy orange soda — sunshine in a bottle.", features: ["Real orange concentrate", "Vivid citrus character", "Naturally carbonated"] },
-  { slug: "tomato-ketchup", name: "Tomato Ketchup", category: "ketchup-sauces", image: ketchup, gallery: [ketchup], size: "500 g", price: 95, description: "Rich, slow-cooked tomato ketchup with a balanced sweet-tangy character.", features: ["Made from sun-ripened tomatoes", "No artificial colour", "Premium glass bottle"] },
-  { slug: "green-chilli-sauce", name: "Green Chilli Sauce", category: "ketchup-sauces", image: chilliPair, gallery: [chilliPair], size: "200 ml", price: 75, description: "Bright, tangy green chilli sauce — sharp heat, clean finish.", features: ["Hand-selected green chillies", "Cold-blended for freshness", "Vegan & gluten-free"] },
-  { slug: "red-chilli-sauce", name: "Red Chilli Sauce", category: "ketchup-sauces", image: chilliPair, gallery: [chilliPair], size: "200 ml", price: 75, description: "Bold red chilli heat with a rich, deep finish.", features: ["Premium red chilli varieties", "Slow-cooked for depth", "Vegan & gluten-free"] },
-  { slug: "soya-sauce", name: "Soya Sauce", category: "ketchup-sauces", image: soya, gallery: [soya], size: "200 ml", price: 80, description: "Naturally brewed soya sauce with deep umami complexity.", features: ["Naturally brewed", "Rich umami profile", "Premium glass bottle"] },
-  { slug: "synthetic-vinegar", name: "Synthetic Vinegar", category: "ketchup-sauces", image: vinegar, gallery: [vinegar], size: "500 ml", price: 45, description: "Crisp culinary vinegar for everyday Indian and continental cooking.", features: ["Lab-tested acidity levels", "Crystal clarity", "Premium PET bottle"] },
-  { slug: "natural-vinegar", name: "Natural Vinegar", category: "ketchup-sauces", image: vinegar, gallery: [vinegar], size: "500 ml", price: 65, description: "Naturally fermented vinegar with a soft, rounded acidity.", features: ["Naturally fermented", "No synthetic acetic acid", "Premium PET bottle"] },
+  { slug: "tomato-ketchup-100ml", name: "Classic Tomato Ketchup 100 ml", category: "ketchup-sauces", image: ketchup100, gallery: [ketchup100, ketchup200, ketchup1L], size: "100 ml", price: 35, description: "Travel-format classic tomato ketchup — slow-cooked, rich, balanced sweet-tangy.", features: ["Sun-ripened tomatoes", "100% natural product", "No artificial colour", "Premium glass bottle"] },
+  { slug: "tomato-ketchup-200ml", name: "Classic Tomato Ketchup 200 ml", category: "ketchup-sauces", image: ketchup200, gallery: [ketchup200, ketchup100, ketchup1L], size: "200 ml", price: 60, description: "Everyday squeeze-bottle ketchup with bright tomato character.", features: ["Sun-ripened tomatoes", "100% natural product", "Squeeze PET bottle", "No artificial colour"] },
+  { slug: "tomato-ketchup-1l", name: "Classic Tomato Ketchup 1 L", category: "ketchup-sauces", image: ketchup1L, gallery: [ketchup1L, ketchup200, ketchup100], size: "1 L", price: 220, description: "HoReCa & family-pack tomato ketchup — slow-cooked, rich, balanced.", features: ["Sun-ripened tomatoes", "100% natural product", "Bulk HoReCa format", "No artificial colour"] },
+  { slug: "green-chilli-sauce-100ml", name: "Spicy Green Chilli Sauce 100 ml", category: "ketchup-sauces", image: greenChilli100, gallery: [greenChilli100, greenChilli200, greenChilli1L], size: "100 ml", price: 45, description: "Bright, tangy green chilli sauce — sharp heat, clean finish.", features: ["Hand-selected green chillies", "100% natural product", "Vegan & gluten-free"] },
+  { slug: "green-chilli-sauce-200ml", name: "Spicy Green Chilli Sauce 200 ml", category: "ketchup-sauces", image: greenChilli200, gallery: [greenChilli200, greenChilli100, greenChilli1L], size: "200 ml", price: 80, description: "Everyday squeeze-bottle green chilli sauce with bold flavour.", features: ["Hand-selected green chillies", "100% natural product", "Squeeze PET bottle"] },
+  { slug: "green-chilli-sauce-1l", name: "Spicy Green Chilli Sauce 1 L", category: "ketchup-sauces", image: greenChilli1L, gallery: [greenChilli1L, greenChilli200, greenChilli100], size: "1 L", price: 320, description: "HoReCa-format green chilli sauce for restaurants and cloud kitchens.", features: ["Hand-selected green chillies", "100% natural product", "Bulk HoReCa format"] },
+  { slug: "soya-sauce-100ml", name: "Soya Sauce 100 ml", category: "ketchup-sauces", image: soya100, gallery: [soya100, soya200], size: "100 ml", price: 50, description: "Naturally brewed soya sauce with deep umami complexity.", features: ["Naturally brewed", "100% natural product", "Premium glass bottle"] },
+  { slug: "soya-sauce-200ml", name: "Soya Sauce 200 ml", category: "ketchup-sauces", image: soya200, gallery: [soya200, soya100], size: "200 ml", price: 90, description: "Everyday soya sauce — rich umami, balanced salinity.", features: ["Naturally brewed", "100% natural product", "Squeeze PET bottle"] },
+  { slug: "vinegar-100ml", name: "Natural Vinegar 100 ml", category: "ketchup-sauces", image: vinegar100, gallery: [vinegar100, vinegar200], size: "100 ml", price: 30, description: "Crisp culinary vinegar — clean acidity for Indian and continental cooking.", features: ["100% natural product", "Crystal clarity", "Premium glass bottle"] },
+  { slug: "vinegar-200ml", name: "Natural Vinegar 200 ml", category: "ketchup-sauces", image: vinegar200, gallery: [vinegar200, vinegar100], size: "200 ml", price: 55, description: "Everyday natural vinegar with a soft, rounded acidity.", features: ["100% natural product", "Crystal clarity", "Squeeze PET bottle"] },
   { slug: "pineapple-jam", name: "Pineapple Jam", category: "jams-juices", image: pineappleJam, gallery: [pineappleJam], size: "350 g", price: 145, description: "Tropical pineapple preserve, slow-cooked with real fruit chunks.", features: ["Real pineapple chunks", "No artificial colour", "Premium glass jar"] },
   { slug: "schezwan-chutney", name: "Schezwan Chutney", category: "jams-juices", image: schezwan, gallery: [schezwan], size: "200 g", price: 110, description: "Signature Indo-Schezwan chutney — fiery, garlicky, addictive.", features: ["Bold Schezwan flavour", "Premium dry red chillies", "Vegan & gluten-free"] },
   { slug: "papaya", name: "Premium Papaya", category: "fresh-fruits", image: papaya, gallery: [papaya], size: "Per kg", price: 60, description: "Hand-picked tropical papaya, graded and washed for retail and HoReCa.", features: ["Hand-graded", "Cold-chain logistics", "Available in bulk crates"] },
