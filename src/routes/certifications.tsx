@@ -40,8 +40,8 @@ export const Route = createFileRoute("/certifications")({
           {CERTS.map((c, i) => (
             <Reveal key={c.t} delay={i * 0.08}>
               <div className="overflow-hidden rounded-3xl border border-border bg-card hover-lift">
-                <div className="aspect-[3/4] overflow-hidden bg-secondary/40">
-                  <img src={c.img} alt={c.t} loading="lazy" className="h-full w-full object-cover" />
+                <div className="aspect-[3/4] overflow-hidden bg-white p-4">
+                  <img src={c.img} alt={c.t} loading="lazy" className="h-full w-full object-contain" />
                 </div>
                 <div className="p-5">
                   <div className="font-display text-lg font-semibold">{c.t}</div>
