@@ -9,15 +9,45 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProcessingRouteImport } from './routes/processing'
+import { Route as OrderRouteImport } from './routes/order'
+import { Route as ExportRouteImport } from './routes/export'
+import { Route as DistributorsRouteImport } from './routes/distributors'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsCategoryRouteImport } from './routes/products.$category'
 
+const ProcessingRoute = ProcessingRouteImport.update({
+  id: '/processing',
+  path: '/processing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrderRoute = OrderRouteImport.update({
+  id: '/order',
+  path: '/order',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExportRoute = ExportRouteImport.update({
+  id: '/export',
+  path: '/export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DistributorsRoute = DistributorsRouteImport.update({
+  id: '/distributors',
+  path: '/distributors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -44,14 +74,24 @@ const ProductsCategoryRoute = ProductsCategoryRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/distributors': typeof DistributorsRoute
+  '/export': typeof ExportRoute
+  '/order': typeof OrderRoute
+  '/processing': typeof ProcessingRoute
   '/products/$category': typeof ProductsCategoryRoute
   '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/distributors': typeof DistributorsRoute
+  '/export': typeof ExportRoute
+  '/order': typeof OrderRoute
+  '/processing': typeof ProcessingRoute
   '/products/$category': typeof ProductsCategoryRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -59,20 +99,50 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/distributors': typeof DistributorsRoute
+  '/export': typeof ExportRoute
+  '/order': typeof OrderRoute
+  '/processing': typeof ProcessingRoute
   '/products/$category': typeof ProductsCategoryRoute
   '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/products/$category' | '/products/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/certifications'
+    | '/contact'
+    | '/distributors'
+    | '/export'
+    | '/order'
+    | '/processing'
+    | '/products/$category'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/products/$category' | '/products'
+  to:
+    | '/'
+    | '/about'
+    | '/certifications'
+    | '/contact'
+    | '/distributors'
+    | '/export'
+    | '/order'
+    | '/processing'
+    | '/products/$category'
+    | '/products'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/certifications'
     | '/contact'
+    | '/distributors'
+    | '/export'
+    | '/order'
+    | '/processing'
     | '/products/$category'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -80,18 +150,58 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CertificationsRoute: typeof CertificationsRoute
   ContactRoute: typeof ContactRoute
+  DistributorsRoute: typeof DistributorsRoute
+  ExportRoute: typeof ExportRoute
+  OrderRoute: typeof OrderRoute
+  ProcessingRoute: typeof ProcessingRoute
   ProductsCategoryRoute: typeof ProductsCategoryRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/processing': {
+      id: '/processing'
+      path: '/processing'
+      fullPath: '/processing'
+      preLoaderRoute: typeof ProcessingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order': {
+      id: '/order'
+      path: '/order'
+      fullPath: '/order'
+      preLoaderRoute: typeof OrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/export': {
+      id: '/export'
+      path: '/export'
+      fullPath: '/export'
+      preLoaderRoute: typeof ExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/distributors': {
+      id: '/distributors'
+      path: '/distributors'
+      fullPath: '/distributors'
+      preLoaderRoute: typeof DistributorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -128,10 +238,25 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CertificationsRoute: CertificationsRoute,
   ContactRoute: ContactRoute,
+  DistributorsRoute: DistributorsRoute,
+  ExportRoute: ExportRoute,
+  OrderRoute: OrderRoute,
+  ProcessingRoute: ProcessingRoute,
   ProductsCategoryRoute: ProductsCategoryRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
