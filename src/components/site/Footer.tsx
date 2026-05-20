@@ -27,10 +27,6 @@ export function Footer() {
               building premium hydration and healthy food, made in Northeast India,
               loved across the world.
             </p>
-              Naturalis Water &amp; Beverages and Leaf &amp; Grains Pvt Ltd —
-              building premium hydration and healthy food, made in Northeast India,
-              loved across the world.
-            </p>
             <div className="mt-6 flex gap-2">
               {["GMP","HACCP","ISO","FSSAI","Halal","Kosher"].map(b => (
                 <span key={b} className="rounded-full border border-border px-3 py-1 text-[10px] tracking-widest uppercase text-muted-foreground">{b}</span>
