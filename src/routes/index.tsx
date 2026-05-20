@@ -43,7 +43,7 @@ function Home() {
       <Certifications />
       <FounderTeaser />
       <ExportSection />
-      <Testimonials />
+      
       <CtaBand />
     </PageShell>
   );
@@ -510,39 +510,6 @@ function Pill({ icon, t, s }: { icon: React.ReactNode; t: string; s: string }) {
   );
 }
 
-/* ───────────────────────── TESTIMONIALS ───────────────────────── */
-
-const QUOTES = [
-  { q: "Purelyf has become a household standard in our region — the clarity and consistency is on par with global brands.", a: "Retail Partner, Guwahati" },
-  { q: "Naturalis Group operates with the rigour of an enterprise. Their export documentation is impeccable.", a: "Importer, Dubai" },
-  { q: "From sourcing to packaging, the quality story is genuinely premium. Easy to recommend.", a: "Hospitality Buyer, Kolkata" },
-];
-
-function Testimonials() {
-  return (
-    <section className="py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <div className="text-center">
-            <div className="text-xs uppercase tracking-[0.28em] text-emerald">Voices</div>
-            <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl">Trusted by partners worldwide.</h2>
-          </div>
-        </Reveal>
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {QUOTES.map((q, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <div className="glass-strong h-full rounded-3xl p-7 hover-lift">
-                <div className="font-display text-3xl leading-none text-primary">"</div>
-                <p className="mt-2 text-foreground/90 text-pretty">{q.q}</p>
-                <div className="mt-6 text-xs uppercase tracking-[0.22em] text-muted-foreground">{q.a}</div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ───────────────────────── CTA BAND ───────────────────────── */
 
