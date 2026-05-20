@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo-naturalis-main.webp";
+import leafLogo from "@/assets/logo-leaf-grains.png";
 
 export function Footer() {
   return (
@@ -7,11 +8,25 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Naturalis" className="h-10 w-10 object-contain" />
-              <span className="font-display text-lg font-semibold">Naturalis Group</span>
+            <div className="flex flex-wrap items-center gap-5">
+              <div className="flex items-center gap-3">
+                <img src={logo} alt="Naturalis" className="h-10 w-10 object-contain" />
+                <span className="font-display text-lg font-semibold">Naturalis Group</span>
+              </div>
+              <span className="hidden h-8 w-px bg-border sm:block" aria-hidden />
+              <div className="flex items-center gap-3">
+                <img src={leafLogo} alt="Leaf and Grains" className="h-10 w-10 rounded-lg object-contain bg-white p-0.5" />
+                <div className="leading-tight">
+                  <div className="font-display text-sm font-semibold">Leaf and Grains</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">A Naturalis division</div>
+                </div>
+              </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Naturalis Water &amp; Beverages and Leaf &amp; Grains Pvt Ltd —
+              building premium hydration and healthy food, made in Northeast India,
+              loved across the world.
+            </p>
               Naturalis Water &amp; Beverages and Leaf &amp; Grains Pvt Ltd —
               building premium hydration and healthy food, made in Northeast India,
               loved across the world.
