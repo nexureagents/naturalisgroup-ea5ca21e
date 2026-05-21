@@ -12,6 +12,7 @@ import {
 import appCss from "../styles.css?url";
 import { CartProvider } from "@/lib/cart";
 import { FloatingCallCta } from "@/components/site/FloatingCallCta";
+import { Toaster } from "@/components/ui/sonner";
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`;
 
@@ -114,6 +115,7 @@ function RootComponent() {
       <CartProvider>
         <Outlet />
         <FloatingCallCta />
+        <Toaster richColors position="top-center" />
       </CartProvider>
     </QueryClientProvider>
   );

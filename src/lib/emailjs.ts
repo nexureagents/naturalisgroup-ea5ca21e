@@ -1,13 +1,13 @@
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
-const CAREERS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_CAREERS_TEMPLATE_ID as string | undefined;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+// EmailJS public credentials — safe to ship in client code
+const SERVICE_ID = "service_0icv4b7";
+const TEMPLATE_ID = "template_dldjd09";
+const CAREERS_TEMPLATE_ID = "template_eg77x5d";
+const PUBLIC_KEY = "AxQzUXMW0gpx_e7Go";
 
 let initialized = false;
 function ensureInit() {
-  if (!PUBLIC_KEY) throw new Error("EmailJS public key is not configured");
   if (!initialized) {
     emailjs.init({ publicKey: PUBLIC_KEY });
     initialized = true;
@@ -16,7 +16,6 @@ function ensureInit() {
 
 export async function sendInquiryEmail(payload: Record<string, unknown>) {
   ensureInit();
-  if (!SERVICE_ID || !TEMPLATE_ID) throw new Error("EmailJS inquiry template is not configured");
   return emailjs.send(SERVICE_ID, TEMPLATE_ID, {
     ...payload,
     submitted_at: new Date().toLocaleString(),
@@ -25,7 +24,6 @@ export async function sendInquiryEmail(payload: Record<string, unknown>) {
 
 export async function sendCareersEmail(payload: Record<string, unknown>) {
   ensureInit();
-  if (!SERVICE_ID || !CAREERS_TEMPLATE_ID) throw new Error("EmailJS careers template is not configured");
   return emailjs.send(SERVICE_ID, CAREERS_TEMPLATE_ID, {
     ...payload,
     to_email: "careers@naturalispure.com",
