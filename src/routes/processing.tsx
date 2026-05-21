@@ -80,11 +80,11 @@ function ProcessingPage() {
           <Reveal>
             <div className="relative overflow-hidden rounded-3xl border border-border">
               <img src={factory4} alt="Naturalis processing hall" loading="lazy" className="h-[440px] w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-center p-10 md:p-16 max-w-xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent md:bg-gradient-to-r md:from-background md:via-background/40 md:to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-center md:max-w-xl md:justify-center md:p-16 md:text-left">
                 <div className="text-xs uppercase tracking-[0.28em] text-emerald">Hygiene by design</div>
-                <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">Enterprise discipline, applied to FMCG.</h3>
-                <p className="mt-4 text-muted-foreground">SOPs, audits, cleanliness and uptime — the same operating discipline that runs telecom infrastructure now runs our food and beverage lines.</p>
+                <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight md:text-4xl">Enterprise discipline, applied to FMCG.</h3>
+                <p className="mt-4 text-sm text-muted-foreground md:text-base">SOPs, audits, cleanliness and uptime — the same operating discipline that runs telecom infrastructure now runs our food and beverage lines.</p>
               </div>
             </div>
           </Reveal>
@@ -176,7 +176,7 @@ function FlowchartSection() {
                     src={f.src}
                     alt={`${f.title} processing flow chart`}
                     loading="lazy"
-                    className="h-[520px] w-full object-contain p-6 transition duration-700 group-hover:scale-[1.02]"
+                    className="mx-auto h-[360px] w-full object-contain p-4 transition duration-700 group-hover:scale-[1.02] sm:h-[460px] sm:p-6 md:h-[520px]"
                   />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/50 to-transparent" />
                 </div>

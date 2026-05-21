@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
+import { toast } from "sonner";
 import { sendInquiryEmail } from "@/lib/emailjs";
 
 type Kind = "general" | "distributor" | "export" | "bulk" | "product" | "franchise" | "careers";
@@ -43,18 +44,22 @@ export function InquiryForm({ kind = "general" }: { kind?: Kind }) {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (status === "loading") return;
     const err = validate();
     if (err) {
       setStatus("error");
       setErrorMsg(err);
+      toast.error(err);
       return;
     }
     setStatus("loading");
     setErrorMsg("");
     try {
       await sendInquiryEmail({
+        full_name: form.name,
         from_name: form.name,
         from_email: form.email,
+        email: form.email,
         company: form.company,
         phone: form.phone,
         country: form.country,
@@ -62,12 +67,14 @@ export function InquiryForm({ kind = "general" }: { kind?: Kind }) {
         message: form.message,
       });
       setStatus("success");
+      toast.success("Inquiry sent successfully");
       setForm({ name: "", company: "", email: "", phone: "", country: "", inquiry_type: kind, message: "" });
       setTimeout(() => setStatus("idle"), 5000);
     } catch (err) {
       console.error(err);
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      toast.error("Failed to send inquiry");
     }
   }
 

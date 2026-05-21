@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, AlertCircle, Loader2, Send, Upload } from "lucide-react";
+import { toast } from "sonner";
 import { sendCareersEmail } from "@/lib/emailjs";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -28,31 +29,38 @@ export function CareersForm() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (status === "loading") return;
     if (!form.name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ||
         !/^[+\d][\d\s\-()]{6,}$/.test(form.phone) || !form.position.trim() || !form.message.trim()) {
       setStatus("error");
       setErrorMsg("Please fill in all required fields with valid values.");
+      toast.error("Please fill in all required fields with valid values.");
       return;
     }
     setStatus("loading");
     setErrorMsg("");
     try {
       await sendCareersEmail({
+        full_name: form.name,
         from_name: form.name,
         from_email: form.email,
+        email: form.email,
         phone: form.phone,
         position: form.position,
         experience: form.experience,
         message: form.message,
+        resume: form.resume_name || "Not attached",
         resume_name: form.resume_name || "Not attached",
       });
       setStatus("success");
+      toast.success("Inquiry sent successfully");
       setForm({ name: "", email: "", phone: "", position: "", experience: "", message: "", resume_name: "" });
       setTimeout(() => setStatus("idle"), 6000);
     } catch (err) {
       console.error(err);
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      toast.error("Failed to send inquiry");
     }
   }
 
