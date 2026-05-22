@@ -58,18 +58,6 @@ export function Footer() {
             <Link to="/faq" className="hover:text-foreground">FAQ</Link>
           </div>
         </div>
-
-        <div className="mt-6 flex flex-col items-center gap-1 border-t border-border/40 pt-6 text-center text-[11px] text-muted-foreground sm:flex-row sm:justify-center sm:gap-1.5">
-          <span>Crafted by</span>
-          <a href="https://blacktorquemedia.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-wide text-foreground/80 transition hover:text-foreground">
-            BlackTorque Media
-          </a>
-          <span className="hidden sm:inline">·</span>
-          <span>a division of</span>
-          <a href="https://nexurecorporation.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-wide text-foreground/80 transition hover:text-foreground">
-            Nexure Corporation
-          </a>
-        </div>
       </div>
     </footer>
   );
