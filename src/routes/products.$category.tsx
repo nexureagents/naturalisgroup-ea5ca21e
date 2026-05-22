@@ -3,6 +3,7 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { CATEGORIES, PRODUCTS, VEGETABLES, type Product, type ProductCategory } from "@/lib/products";
 import { ArrowRight, ShoppingBag } from "lucide-react";
+import vegetablesImg from "@/assets/category-vegetables.jpg";
 
 export const Route = createFileRoute("/products/$category")({
   loader: ({ params }): { cat: ProductCategory; products: Product[] } => {
@@ -73,7 +74,12 @@ function CategoryPage() {
           {isVeg && (
             <div className="mt-16">
               <Reveal>
-                <h2 className="font-display text-3xl font-semibold">Full fresh vegetable range</h2>
+                <div className="overflow-hidden rounded-3xl border border-border">
+                  <img src={vegetablesImg} alt="Fresh vegetables — Leaf & Grains" loading="lazy" width={1024} height={1024} className="h-[320px] w-full object-cover md:h-[460px]" />
+                </div>
+              </Reveal>
+              <Reveal>
+                <h2 className="mt-10 font-display text-3xl font-semibold">Full fresh vegetable range</h2>
                 <p className="mt-2 text-muted-foreground">24 hand-graded varieties, available in retail and bulk crates.</p>
               </Reveal>
               <div className="mt-8 flex flex-wrap gap-2">
