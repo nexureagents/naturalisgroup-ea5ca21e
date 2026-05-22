@@ -35,6 +35,8 @@ function ProductsPage() {
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {CATEGORIES.map((c, i) => {
               const sample = PRODUCTS.find((p) => p.category === c.slug && p.image);
+              const fallback = CATEGORY_IMAGE_FALLBACK[c.slug];
+              const image = sample?.image ?? fallback;
               const count = PRODUCTS.filter((p) => p.category === c.slug).length;
               return (
                 <Reveal key={c.slug} delay={i * 0.05}>
@@ -44,8 +46,8 @@ function ProductsPage() {
                     className="group relative block h-full overflow-hidden rounded-3xl border border-border bg-card transition hover:border-primary/40 hover-lift"
                   >
                     <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-primary/5 to-emerald/5">
-                      {sample?.image ? (
-                        <img src={sample.image} alt={c.title} loading="lazy" className="h-full w-full object-contain p-8 transition duration-700 group-hover:scale-105" />
+                      {image ? (
+                        <img src={image} alt={c.title} loading="lazy" className={`h-full w-full transition duration-700 group-hover:scale-105 ${sample?.image ? "object-contain p-8" : "object-cover"}`} />
                       ) : (
                         <div className="grid h-full place-items-center text-7xl opacity-20 font-display">{c.title.charAt(0)}</div>
                       )}
