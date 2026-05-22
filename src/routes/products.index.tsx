@@ -3,6 +3,11 @@ import { PageShell, PageHero } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { CATEGORIES, PRODUCTS } from "@/lib/products";
 import { ArrowRight } from "lucide-react";
+import vegetablesImg from "@/assets/category-vegetables.jpg";
+
+const CATEGORY_IMAGE_FALLBACK: Record<string, string> = {
+  "fresh-vegetables": vegetablesImg,
+};
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
