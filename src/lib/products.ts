@@ -19,6 +19,10 @@ import vinegar100 from "@/assets/products/vinegar-100ml.webp";
 import vinegar200 from "@/assets/products/vinegar-200ml.webp";
 import pineappleJam from "@/assets/products/pineapple-jam.webp";
 import schezwan from "@/assets/products/schezwan-chutney.webp";
+import redChilli100 from "@/assets/products/red-chilli-100ml.png";
+import redChilli200 from "@/assets/products/red-chilli-200ml.png";
+import redChilli1L from "@/assets/products/red-chilli-1l.png";
+import sachet10g from "@/assets/products/sachet-pouch-10g.png";
 import papaya from "@/assets/product-papaya.jpg";
 import readyToEat from "@/assets/product-ready-to-eat.jpg";
 
@@ -98,9 +102,9 @@ export const PRODUCTS: Product[] = [
   { slug: "tk-regular-hd-1l",     name: "TK Regular HD 1 L",               category: "ketchup-sauces", image: ketchup1L, gallery: [ketchup1L], size: "1 L", sku: "NTR-TKR-1L", price: 110, mrp: 110, retailerPrice: 85, retailerNote: "per unit", description: "TK Regular HD tomato ketchup in HoReCa-friendly 1 L format." },
 
   // ===== Red Chilli Sauce =====
-  { slug: "red-chilli-sauce-100ml", name: "Red Chilli Sauce 100 g", category: "ketchup-sauces", size: "100 g", sku: "NTR-RCS-100", price: 40,  mrp: 40,  retailerPrice: 33, retailerNote: "per unit", description: "Fiery red chilli sauce with deep colour and balanced heat." },
-  { slug: "red-chilli-sauce-200ml", name: "Red Chilli Sauce 200 g", category: "ketchup-sauces", size: "200 g", sku: "NTR-RCS-200", price: 70,  mrp: 70,  retailerPrice: 60, retailerNote: "per unit", description: "Everyday red chilli sauce — bold heat and clean flavour." },
-  { slug: "red-chilli-sauce-1l",    name: "Red Chilli Sauce 1 L",   category: "ketchup-sauces", size: "1 L",   sku: "NTR-RCS-1L",  price: 110, mrp: 110, retailerPrice: 85, retailerNote: "per unit", description: "HoReCa format red chilli sauce for restaurants and cloud kitchens." },
+  { slug: "red-chilli-sauce-100ml", name: "Red Chilli Sauce 100 g", category: "ketchup-sauces", image: redChilli100, gallery: [redChilli100, redChilli200, redChilli1L], size: "100 g", sku: "NTR-RCS-100", price: 40,  mrp: 40,  retailerPrice: 33, retailerNote: "per unit", description: "Fiery red chilli sauce with deep colour and balanced heat." },
+  { slug: "red-chilli-sauce-200ml", name: "Red Chilli Sauce 200 g", category: "ketchup-sauces", image: redChilli200, gallery: [redChilli200, redChilli100, redChilli1L], size: "200 g", sku: "NTR-RCS-200", price: 70,  mrp: 70,  retailerPrice: 60, retailerNote: "per unit", description: "Everyday red chilli sauce — bold heat and clean flavour." },
+  { slug: "red-chilli-sauce-1l",    name: "Red Chilli Sauce 1 L",   category: "ketchup-sauces", image: redChilli1L,  gallery: [redChilli1L, redChilli200, redChilli100], size: "1 L",   sku: "NTR-RCS-1L",  price: 110, mrp: 110, retailerPrice: 85, retailerNote: "per unit", description: "HoReCa format red chilli sauce for restaurants and cloud kitchens." },
 
   // ===== Green Chilli Sauce =====
   { slug: "green-chilli-sauce-100ml", name: "Green Chilli Sauce 100 g", category: "ketchup-sauces", image: greenChilli100, gallery: [greenChilli100, greenChilli200, greenChilli1L], size: "100 g", sku: "NTR-GCS-100", price: 40,  mrp: 40,  retailerPrice: 33, retailerNote: "per unit", description: "Bright, tangy green chilli sauce — sharp heat, clean finish.", features: ["Hand-selected green chillies", "100% natural product", "Vegan & gluten-free"] },
@@ -116,7 +120,7 @@ export const PRODUCTS: Product[] = [
   { slug: "vinegar-200ml", name: "White Vinegar 200 g", category: "ketchup-sauces", image: vinegar200, gallery: [vinegar200, vinegar100], size: "200 g", sku: "NTR-VIN-200", price: 60, mrp: 60, retailerPrice: 50, retailerNote: "per unit", description: "Everyday white vinegar with a soft, rounded acidity.", features: ["100% natural product", "Crystal clarity", "Squeeze PET bottle"] },
 
   // ===== Sachet =====
-  { slug: "sachet-pouch-10g", name: "Sauce Sachet Pouch 10 g", category: "ketchup-sauces", size: "10 g", sku: "NTR-SCH-10", price: 2, mrp: 2, retailerPrice: 2, retailerNote: "per sachet", description: "Single-serve sauce sachet — HoReCa, takeaway and delivery friendly." },
+  { slug: "sachet-pouch-10g", name: "Sauce Sachet Pouch 10 g", category: "ketchup-sauces", image: sachet10g, gallery: [sachet10g], size: "10 g", sku: "NTR-SCH-10", price: 2, mrp: 2, retailerPrice: 2, retailerNote: "per sachet", description: "Single-serve sauce sachet — HoReCa, takeaway and delivery friendly." },
 
   // ===== Jams, juices, chutneys =====
   { slug: "pineapple-jam",   name: "Pineapple Jam",      category: "jams-juices", image: pineappleJam, gallery: [pineappleJam], size: "400 g", sku: "NTR-PJM-400", price: 99,  mrp: 99,  retailerPrice: 75, retailerNote: "per jar", description: "Tropical pineapple preserve, slow-cooked with real fruit chunks.", features: ["Real pineapple chunks", "No artificial colour", "Premium glass jar"] },
