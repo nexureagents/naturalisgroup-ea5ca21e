@@ -43,10 +43,10 @@ function CategoryPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           {products.length > 0 && (
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {products.map((p: Product, i: number) => (
                 <Reveal key={p.slug} delay={i * 0.05}>
-                  <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-card hover-lift hover:border-primary/40">
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card text-center transition hover-lift hover:border-primary/50 hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.25),0_30px_60px_-30px_hsl(var(--primary)/0.35)] sm:text-left">
                     <div className="aspect-[4/5] overflow-hidden bg-gradient-to-br from-primary/5 to-emerald/5">
                       {p.image ? (
                         <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-contain p-10 transition duration-700 group-hover:scale-105" />
@@ -54,15 +54,41 @@ function CategoryPage() {
                         <div className="grid h-full place-items-center font-display text-6xl text-foreground/15">{p.name.charAt(0)}</div>
                       )}
                     </div>
-                    <div className="p-6">
-                      {p.size && <div className="text-[10px] uppercase tracking-[0.25em] text-emerald">{p.size}</div>}
+                    <div className="flex flex-1 flex-col p-6">
+                      <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+                        {p.size && <span className="text-[10px] uppercase tracking-[0.25em] text-emerald">{p.size}</span>}
+                        {p.sku && <span className="rounded-full border border-border/70 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{p.sku}</span>}
+                      </div>
                       <div className="mt-2 font-display text-lg font-semibold">{p.name}</div>
                       <p className="mt-1 text-sm text-muted-foreground">{p.description}</p>
-                      <div className="mt-5 flex items-center justify-between">
+
+                      {(p.mrp || p.retailerPrice) && (
+                        <div className="mt-5 rounded-2xl border border-border/70 bg-gradient-to-br from-background/60 via-card to-emerald/5 p-4 transition group-hover:border-primary/40">
+                          <div className="flex items-end justify-between gap-3">
+                            {p.mrp !== undefined && (
+                              <div className="text-left">
+                                <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">MRP</div>
+                                <div className="font-display text-xl font-semibold leading-none text-foreground">₹{p.mrp}</div>
+                              </div>
+                            )}
+                            {p.retailerPrice !== undefined && (
+                              <div className="text-right">
+                                <div className="text-[10px] uppercase tracking-[0.22em] text-emerald">Retailer</div>
+                                <div className="font-display text-xl font-semibold leading-none text-gradient-aqua">₹{p.retailerPrice}</div>
+                                {p.retailerNote && <div className="mt-1 text-[10px] text-muted-foreground">{p.retailerNote}</div>}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="mt-5 flex flex-wrap items-center justify-center gap-3 sm:justify-between">
                         <Link to="/order" className="inline-flex items-center gap-1.5 text-xs font-medium text-primary">
                           <ShoppingBag className="h-3.5 w-3.5" /> Order
                         </Link>
-                        <Link to="/contact" className="text-xs text-muted-foreground hover:text-foreground">Bulk inquiry →</Link>
+                        <Link to="/contact" className="inline-flex items-center gap-1.5 rounded-full border border-border/70 px-3 py-1.5 text-[11px] font-medium text-muted-foreground transition hover:border-emerald/50 hover:text-emerald">
+                          Bulk Inquiry →
+                        </Link>
                       </div>
                     </div>
                   </div>
