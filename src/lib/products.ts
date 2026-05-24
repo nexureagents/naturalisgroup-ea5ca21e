@@ -23,6 +23,7 @@ import redChilli100 from "@/assets/products/red-chilli-100ml.png";
 import redChilli200 from "@/assets/products/red-chilli-200ml.png";
 import redChilli1L from "@/assets/products/red-chilli-1l.png";
 import sachet10g from "@/assets/products/sachet-pouch-10g.png";
+import glass750 from "@/assets/products/purelyf-glass-750.png";
 import papaya from "@/assets/product-papaya.jpg";
 import readyToEat from "@/assets/product-ready-to-eat.jpg";
 
@@ -76,12 +77,9 @@ export const PRODUCTS: Product[] = [
   { slug: "purelyf-can",   name: "Purelyf Water Can",    category: "water-beverages", image: waterCan, gallery: [waterCan], size: "20 L", sku: "NTR-PLF-20L", price: 80, mrp: 80, description: "Office & home bulk water can with reinforced PET body and sealed cap.", features: waterFeatures },
 
   // ===== Purelite economy water =====
-  { slug: "purelite-500ml", name: "Purelite Water 500 ml", category: "water-beverages", size: "500 ml", sku: "NTR-PLT-500", price: 10, mrp: 10, retailerPrice: 152, retailerNote: "per carton", description: "Everyday Purelite packaged drinking water in the on-the-go 500 ml format." },
-  { slug: "purelite-1l",    name: "Purelite Water 1 L",    category: "water-beverages", size: "1 L",    sku: "NTR-PLT-1L",  price: 20, mrp: 20, retailerPrice: 125, retailerNote: "per carton", description: "Family-format Purelite drinking water — clean, light, daily-use." },
-  { slug: "purelite-2l",    name: "Purelite Water 2 L",    category: "water-beverages", size: "2 L",    sku: "NTR-PLT-2L",  price: 30, mrp: 30, retailerPrice: 125, retailerNote: "per carton", description: "Value 2 L Purelite drinking water for households and pantries." },
 
   // ===== Glass bottle premium water =====
-  { slug: "purelyf-glass-750", name: "Purelyf Glass Bottle 750 ml", category: "water-beverages", size: "750 ml", sku: "NTR-PLF-G750", price: 225, mrp: 225, retailerPrice: 175, retailerNote: "per bottle", description: "Premium glass-bottle drinking water — for fine dining, HoReCa and gifting." },
+  { slug: "purelyf-glass-750", name: "Purelyf Glass Bottle 750 ml", category: "water-beverages", image: glass750, gallery: [glass750], size: "750 ml", sku: "NTR-PLF-G750", price: 225, mrp: 225, retailerPrice: 175, retailerNote: "per bottle", description: "Premium glass-bottle drinking water — for fine dining, HoReCa and gifting." },
 
   // ===== Alkaline =====
   { slug: "purelyf-alkaline-500", name: "Purelyf Alkaline Water 500 ml", category: "alkaline-water", image: alkaline, gallery: [alkaline], size: "500 ml", sku: "NTR-ALK-500", price: 40, mrp: 40, retailerPrice: 457, retailerNote: "per carton", description: "Mineral-enhanced Purelyf+ 8.5 alkaline water in the on-the-go 500 ml format.", features: ["pH 8.5 mineral-enhanced", "Enhanced with electrolytes", "Multi-stage purified base water"] },
@@ -125,7 +123,7 @@ export const PRODUCTS: Product[] = [
   // ===== Jams, juices, chutneys =====
   { slug: "pineapple-jam",   name: "Pineapple Jam",      category: "jams-juices", image: pineappleJam, gallery: [pineappleJam], size: "400 g", sku: "NTR-PJM-400", price: 99,  mrp: 99,  retailerPrice: 75, retailerNote: "per jar", description: "Tropical pineapple preserve, slow-cooked with real fruit chunks.", features: ["Real pineapple chunks", "No artificial colour", "Premium glass jar"] },
   { slug: "schezwan-chutney",name: "Schezwan Chatni",    category: "jams-juices", image: schezwan,     gallery: [schezwan],     size: "300 g", sku: "NTR-SZC-300", price: 110, mrp: 110, description: "Signature Indo-Schezwan chutney — fiery, garlicky, addictive.", features: ["Bold Schezwan flavour", "Premium dry red chillies", "Vegan & gluten-free"] },
-  { slug: "imli-sauce-100g", name: "Imli Sauce 100 g",   category: "jams-juices", size: "100 g", sku: "NTR-IML-100", description: "Tangy-sweet imli sauce — classic Indian chat companion." },
+  
   { slug: "pineapple-juice-200ml", name: "Pineapple Juice 200 ml", category: "jams-juices", size: "200 ml", sku: "NTR-PJU-200", description: "Refreshing tropical pineapple juice in the convenient 200 ml format." },
 
   // ===== Fresh produce & RTE =====
