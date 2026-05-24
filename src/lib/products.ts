@@ -4,7 +4,7 @@ import water1L from "@/assets/water-1l.webp";
 import water2L from "@/assets/water-2l.webp";
 import waterCan from "@/assets/purelyf-can-20l.webp";
 import alkaline from "@/assets/purelyf-alkaline.webp";
-import bubblz from "@/assets/products/bubblz-club-soda.webp";
+
 import jeera from "@/assets/products/jeera-masala-soda.webp";
 import orange from "@/assets/products/orange-soda.webp";
 import ketchup100 from "@/assets/products/tomato-ketchup-100ml.webp";
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
   { slug: "pineapple-jam",   name: "Pineapple Jam",      category: "jams-juices", image: pineappleJam, gallery: [pineappleJam], size: "400 g", sku: "NTR-PJM-400", price: 99,  mrp: 99,  retailerPrice: 75, retailerNote: "per jar", description: "Tropical pineapple preserve, slow-cooked with real fruit chunks.", features: ["Real pineapple chunks", "No artificial colour", "Premium glass jar"] },
   { slug: "schezwan-chutney",name: "Schezwan Chatni",    category: "jams-juices", image: schezwan,     gallery: [schezwan],     size: "300 g", sku: "NTR-SZC-300", price: 110, mrp: 110, description: "Signature Indo-Schezwan chutney — fiery, garlicky, addictive.", features: ["Bold Schezwan flavour", "Premium dry red chillies", "Vegan & gluten-free"] },
   
-  { slug: "pineapple-juice-200ml", name: "Pineapple Juice 200 ml", category: "jams-juices", size: "200 ml", sku: "NTR-PJU-200", description: "Refreshing tropical pineapple juice in the convenient 200 ml format." },
+  
 
   // ===== Fresh produce & RTE =====
   { slug: "papaya", name: "Premium Papaya", category: "fresh-fruits", image: papaya, gallery: [papaya], size: "Per kg", sku: "NTR-PAP-KG", price: 60, mrp: 60, description: "Hand-picked tropical papaya, graded and washed for retail and HoReCa.", features: ["Hand-graded", "Cold-chain logistics", "Available in bulk crates"] },
