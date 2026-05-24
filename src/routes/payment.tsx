@@ -21,7 +21,7 @@ const BANK = [
   ["Account Name", "Naturalis Water and Beverages LLP"],
   ["Bank", "Bank of Baroda"],
   ["Branch", "Ramnagar, Agartala"],
-  ["Account Number", "573805000000028"],
+  ["Account Number", "57380200000107"],
   ["IFSC", "BARB0RAMAGA"],
   ["UPI ID", "rosuman-1@okicici"],
 ];
