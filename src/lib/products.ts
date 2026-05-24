@@ -77,12 +77,9 @@ export const PRODUCTS: Product[] = [
   { slug: "purelyf-can",   name: "Purelyf Water Can",    category: "water-beverages", image: waterCan, gallery: [waterCan], size: "20 L", sku: "NTR-PLF-20L", price: 80, mrp: 80, description: "Office & home bulk water can with reinforced PET body and sealed cap.", features: waterFeatures },
 
   // ===== Purelite economy water =====
-  { slug: "purelite-500ml", name: "Purelite Water 500 ml", category: "water-beverages", size: "500 ml", sku: "NTR-PLT-500", price: 10, mrp: 10, retailerPrice: 152, retailerNote: "per carton", description: "Everyday Purelite packaged drinking water in the on-the-go 500 ml format." },
-  { slug: "purelite-1l",    name: "Purelite Water 1 L",    category: "water-beverages", size: "1 L",    sku: "NTR-PLT-1L",  price: 20, mrp: 20, retailerPrice: 125, retailerNote: "per carton", description: "Family-format Purelite drinking water — clean, light, daily-use." },
-  { slug: "purelite-2l",    name: "Purelite Water 2 L",    category: "water-beverages", size: "2 L",    sku: "NTR-PLT-2L",  price: 30, mrp: 30, retailerPrice: 125, retailerNote: "per carton", description: "Value 2 L Purelite drinking water for households and pantries." },
 
   // ===== Glass bottle premium water =====
-  { slug: "purelyf-glass-750", name: "Purelyf Glass Bottle 750 ml", category: "water-beverages", size: "750 ml", sku: "NTR-PLF-G750", price: 225, mrp: 225, retailerPrice: 175, retailerNote: "per bottle", description: "Premium glass-bottle drinking water — for fine dining, HoReCa and gifting." },
+  { slug: "purelyf-glass-750", name: "Purelyf Glass Bottle 750 ml", category: "water-beverages", image: glass750, gallery: [glass750], size: "750 ml", sku: "NTR-PLF-G750", price: 225, mrp: 225, retailerPrice: 175, retailerNote: "per bottle", description: "Premium glass-bottle drinking water — for fine dining, HoReCa and gifting." },
 
   // ===== Alkaline =====
   { slug: "purelyf-alkaline-500", name: "Purelyf Alkaline Water 500 ml", category: "alkaline-water", image: alkaline, gallery: [alkaline], size: "500 ml", sku: "NTR-ALK-500", price: 40, mrp: 40, retailerPrice: 457, retailerNote: "per carton", description: "Mineral-enhanced Purelyf+ 8.5 alkaline water in the on-the-go 500 ml format.", features: ["pH 8.5 mineral-enhanced", "Enhanced with electrolytes", "Multi-stage purified base water"] },
