@@ -4,7 +4,7 @@ import water1L from "@/assets/water-1l.webp";
 import water2L from "@/assets/water-2l.webp";
 import waterCan from "@/assets/purelyf-can-20l.webp";
 import alkaline from "@/assets/purelyf-alkaline.webp";
-import bubblz from "@/assets/products/bubblz-club-soda.webp";
+
 import jeera from "@/assets/products/jeera-masala-soda.webp";
 import orange from "@/assets/products/orange-soda.webp";
 import ketchup100 from "@/assets/products/tomato-ketchup-100ml.webp";
@@ -24,6 +24,10 @@ import redChilli200 from "@/assets/products/red-chilli-200ml.png";
 import redChilli1L from "@/assets/products/red-chilli-1l.png";
 import sachet10g from "@/assets/products/sachet-pouch-10g.png";
 import glass750 from "@/assets/products/purelyf-glass-750.png";
+import limbuPani from "@/assets/products/limbu-pani-300.png";
+import lichiSoda from "@/assets/products/lichi-soda-300.png";
+import plainSoda750 from "@/assets/products/plain-soda-750.png";
+import plainSoda650 from "@/assets/products/plain-soda-650.png";
 import papaya from "@/assets/product-papaya.jpg";
 import readyToEat from "@/assets/product-ready-to-eat.jpg";
 
@@ -85,13 +89,12 @@ export const PRODUCTS: Product[] = [
   { slug: "purelyf-alkaline-500", name: "Purelyf Alkaline Water 500 ml", category: "alkaline-water", image: alkaline, gallery: [alkaline], size: "500 ml", sku: "NTR-ALK-500", price: 40, mrp: 40, retailerPrice: 457, retailerNote: "per carton", description: "Mineral-enhanced Purelyf+ 8.5 alkaline water in the on-the-go 500 ml format.", features: ["pH 8.5 mineral-enhanced", "Enhanced with electrolytes", "Multi-stage purified base water"] },
 
   // ===== Sodas & soft drinks =====
-  { slug: "bubblz-soda",        name: "Bubblz Club Soda",      category: "sodas-soft-drinks", image: bubblz, gallery: [bubblz], size: "250 ml", sku: "NTR-BUB-250", price: 25, mrp: 25, description: "Classic crafted soda — clean, crisp and instantly refreshing.", features: ["Naturally carbonated", "Crystal-clear formulation", "No artificial preservatives"] },
-  { slug: "plain-soda-650",     name: "Plain Soda 650 ml",     category: "sodas-soft-drinks", size: "650 ml", sku: "NTR-SOD-650", price: 25, mrp: 25, retailerPrice: 20, retailerNote: "per bottle", description: "Bright, crisp plain soda — the perfect everyday mixer." },
-  { slug: "plain-soda-750",     name: "Plain Soda 750 ml",     category: "sodas-soft-drinks", size: "750 ml", sku: "NTR-SOD-750", price: 30, mrp: 30, retailerPrice: 25, retailerNote: "per bottle", description: "Value-format plain soda for bars, restaurants and family use." },
+  { slug: "plain-soda-650",     name: "Plain Soda 650 ml",     category: "sodas-soft-drinks", image: plainSoda650, gallery: [plainSoda650], size: "650 ml", sku: "NTR-SOD-650", price: 25, mrp: 25, retailerPrice: 20, retailerNote: "per bottle", description: "Bright, crisp plain soda — the perfect everyday mixer." },
+  { slug: "plain-soda-750",     name: "Plain Soda 750 ml",     category: "sodas-soft-drinks", image: plainSoda750, gallery: [plainSoda750], size: "750 ml", sku: "NTR-SOD-750", price: 30, mrp: 30, retailerPrice: 25, retailerNote: "per bottle", description: "Value-format plain soda for bars, restaurants and family use." },
   { slug: "jeera-masala-soda",  name: "Jeera Masala Soda",     category: "sodas-soft-drinks", image: jeera, gallery: [jeera], size: "300 ml", sku: "NTR-JEE-300", price: 20, mrp: 20, retailerPrice: 15, retailerNote: "per bottle", description: "Aromatic jeera masala fizz with the warmth of Indian spices.", features: ["Real jeera extract", "Crafted spice blend", "Naturally carbonated"] },
   { slug: "orange-soda",        name: "Orange Soda",           category: "sodas-soft-drinks", image: orange, gallery: [orange], size: "300 ml", sku: "NTR-ORG-300", price: 20, mrp: 20, retailerPrice: 15, retailerNote: "per bottle", description: "Bright, juicy orange soda — sunshine in a bottle.", features: ["Real orange concentrate", "Vivid citrus character", "Naturally carbonated"] },
-  { slug: "limbu-pani-300",     name: "Limbu Pani",            category: "sodas-soft-drinks", size: "300 ml", sku: "NTR-LIM-300", price: 20, mrp: 20, retailerPrice: 15, retailerNote: "per bottle", description: "Refreshing limbu pani — zesty Indian lemonade with a cool fizz." },
-  { slug: "lichi-soda-300",     name: "Lichi Soda",            category: "sodas-soft-drinks", size: "300 ml", sku: "NTR-LIC-300", price: 20, mrp: 20, retailerPrice: 15, retailerNote: "per bottle", description: "Aromatic lichi soda — sweet, floral and irresistibly refreshing." },
+  { slug: "limbu-pani-300",     name: "Limbu Pani",            category: "sodas-soft-drinks", image: limbuPani, gallery: [limbuPani], size: "300 ml", sku: "NTR-LIM-300", price: 20, mrp: 20, retailerPrice: 15, retailerNote: "per bottle", description: "Refreshing limbu pani — zesty Indian lemonade with a cool fizz." },
+  { slug: "lichi-soda-300",     name: "Lichi Soda",            category: "sodas-soft-drinks", image: lichiSoda, gallery: [lichiSoda], size: "300 ml", sku: "NTR-LIC-300", price: 20, mrp: 20, retailerPrice: 15, retailerNote: "per bottle", description: "Aromatic lichi soda — sweet, floral and irresistibly refreshing." },
 
   // ===== TK Classic Tomato Ketchup =====
   { slug: "tomato-ketchup-100ml", name: "TK Classic Tomato Ketchup 100 g", category: "ketchup-sauces", image: ketchup100, gallery: [ketchup100, ketchup200, ketchup1L], size: "100 g", sku: "NTR-TKC-100", price: 40,  mrp: 40,  retailerPrice: 33, retailerNote: "per unit", description: "Travel-format classic tomato ketchup — slow-cooked, rich, balanced sweet-tangy.", features: ["Sun-ripened tomatoes", "100% natural product", "No artificial colour"] },
@@ -124,7 +127,7 @@ export const PRODUCTS: Product[] = [
   { slug: "pineapple-jam",   name: "Pineapple Jam",      category: "jams-juices", image: pineappleJam, gallery: [pineappleJam], size: "400 g", sku: "NTR-PJM-400", price: 99,  mrp: 99,  retailerPrice: 75, retailerNote: "per jar", description: "Tropical pineapple preserve, slow-cooked with real fruit chunks.", features: ["Real pineapple chunks", "No artificial colour", "Premium glass jar"] },
   { slug: "schezwan-chutney",name: "Schezwan Chatni",    category: "jams-juices", image: schezwan,     gallery: [schezwan],     size: "300 g", sku: "NTR-SZC-300", price: 110, mrp: 110, description: "Signature Indo-Schezwan chutney — fiery, garlicky, addictive.", features: ["Bold Schezwan flavour", "Premium dry red chillies", "Vegan & gluten-free"] },
   
-  { slug: "pineapple-juice-200ml", name: "Pineapple Juice 200 ml", category: "jams-juices", size: "200 ml", sku: "NTR-PJU-200", description: "Refreshing tropical pineapple juice in the convenient 200 ml format." },
+  
 
   // ===== Fresh produce & RTE =====
   { slug: "papaya", name: "Premium Papaya", category: "fresh-fruits", image: papaya, gallery: [papaya], size: "Per kg", sku: "NTR-PAP-KG", price: 60, mrp: 60, description: "Hand-picked tropical papaya, graded and washed for retail and HoReCa.", features: ["Hand-graded", "Cold-chain logistics", "Available in bulk crates"] },
