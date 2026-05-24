@@ -23,6 +23,7 @@ import redChilli100 from "@/assets/products/red-chilli-100ml.png";
 import redChilli200 from "@/assets/products/red-chilli-200ml.png";
 import redChilli1L from "@/assets/products/red-chilli-1l.png";
 import sachet10g from "@/assets/products/sachet-pouch-10g.png";
+import glass750 from "@/assets/products/purelyf-glass-750.png";
 import papaya from "@/assets/product-papaya.jpg";
 import readyToEat from "@/assets/product-ready-to-eat.jpg";
 
