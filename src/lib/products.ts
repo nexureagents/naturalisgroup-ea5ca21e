@@ -123,7 +123,7 @@ export const PRODUCTS: Product[] = [
   // ===== Jams, juices, chutneys =====
   { slug: "pineapple-jam",   name: "Pineapple Jam",      category: "jams-juices", image: pineappleJam, gallery: [pineappleJam], size: "400 g", sku: "NTR-PJM-400", price: 99,  mrp: 99,  retailerPrice: 75, retailerNote: "per jar", description: "Tropical pineapple preserve, slow-cooked with real fruit chunks.", features: ["Real pineapple chunks", "No artificial colour", "Premium glass jar"] },
   { slug: "schezwan-chutney",name: "Schezwan Chatni",    category: "jams-juices", image: schezwan,     gallery: [schezwan],     size: "300 g", sku: "NTR-SZC-300", price: 110, mrp: 110, description: "Signature Indo-Schezwan chutney — fiery, garlicky, addictive.", features: ["Bold Schezwan flavour", "Premium dry red chillies", "Vegan & gluten-free"] },
-  { slug: "imli-sauce-100g", name: "Imli Sauce 100 g",   category: "jams-juices", size: "100 g", sku: "NTR-IML-100", description: "Tangy-sweet imli sauce — classic Indian chat companion." },
+  
   { slug: "pineapple-juice-200ml", name: "Pineapple Juice 200 ml", category: "jams-juices", size: "200 ml", sku: "NTR-PJU-200", description: "Refreshing tropical pineapple juice in the convenient 200 ml format." },
 
   // ===== Fresh produce & RTE =====
