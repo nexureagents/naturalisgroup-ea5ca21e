@@ -76,12 +76,14 @@ export function Navbar() {
                 </span>
               )}
             </Link>
-            <Link
-              to="/order"
+            <a
+              href="https://shop.naturalispure.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground shadow-luxe transition hover:opacity-90"
             >
-              Order
-            </Link>
+              Shop Now
+            </a>
             <button
               type="button"
               aria-label="Menu"
@@ -106,13 +108,15 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/order"
+              <a
+                href="https://shop.naturalispure.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="mt-2 rounded-xl bg-primary px-4 py-3 text-center text-sm font-medium text-primary-foreground"
               >
-                Order Now
-              </Link>
+                Shop Now
+              </a>
             </div>
           </div>
         )}
