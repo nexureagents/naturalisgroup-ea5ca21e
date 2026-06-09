@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { useCart } from "@/lib/cart";
 import logo from "@/assets/logo-naturalis-main.webp";
 
 const NAV = [
