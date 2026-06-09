@@ -127,29 +127,29 @@ function Hero() {
               transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
             />
             <motion.img
-              src={bottle500}
-              alt=""
-              className="absolute -left-4 top-24 h-[260px] w-auto opacity-90 animate-float"
+              src={redChilli}
+              alt="Red Chilli Sauce"
+              className="absolute -left-4 top-24 h-[260px] w-auto opacity-95 animate-float"
               initial={{ x: -40, opacity: 0 }}
-              animate={{ x: 0, opacity: 0.9 }}
+              animate={{ x: 0, opacity: 0.95 }}
               transition={{ duration: 1, delay: 0.65 }}
               style={{ animationDelay: "1.2s" }}
             />
             <motion.img
-              src={bottle250}
-              alt=""
-              className="absolute -right-2 top-44 h-[200px] w-auto opacity-90 animate-float"
+              src={lichiSoda}
+              alt="Lichi Soda"
+              className="absolute -right-2 top-44 h-[230px] w-auto opacity-95 animate-float"
               initial={{ x: 40, opacity: 0 }}
-              animate={{ x: 0, opacity: 0.9 }}
+              animate={{ x: 0, opacity: 0.95 }}
               transition={{ duration: 1, delay: 0.8 }}
               style={{ animationDelay: "0.4s" }}
             />
             <motion.img
-              src={bottle2L}
-              alt=""
-              className="absolute right-6 bottom-0 h-[300px] w-auto opacity-80"
+              src={pineappleJam}
+              alt="Pineapple Jam"
+              className="absolute right-6 bottom-0 h-[240px] w-auto opacity-95"
               initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 0.8 }}
+              animate={{ y: 0, opacity: 0.95 }}
               transition={{ duration: 1, delay: 0.95 }}
             />
           </div>
