@@ -27,8 +27,10 @@ import sachet10g from "@/assets/products/sachet-pouch-10g.png";
 import glass750 from "@/assets/products/purelyf-glass-750.png";
 import limbuPani from "@/assets/products/limbu-pani-300.png";
 import lichiSoda from "@/assets/products/lichi-soda-300.png";
-import plainSoda750 from "@/assets/products/plain-soda-750.png";
-import plainSoda650 from "@/assets/products/plain-soda-650.png";
+import soda750Asset from "@/assets/products/bubblz-750.png.asset.json";
+import soda650Asset from "@/assets/products/bubblz-650.png.asset.json";
+const plainSoda750 = soda750Asset.url;
+const plainSoda650 = soda650Asset.url;
 import papaya from "@/assets/product-papaya.jpg";
 import readyToEat from "@/assets/product-ready-to-eat.jpg";
 
