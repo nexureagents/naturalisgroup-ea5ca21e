@@ -3,7 +3,8 @@ import water500 from "@/assets/water-500.webp";
 import water1L from "@/assets/water-1l.webp";
 import water2L from "@/assets/water-2l.webp";
 import waterCan from "@/assets/purelyf-can-20l.webp";
-import alkaline from "@/assets/purelyf-alkaline.webp";
+import alkalineAsset from "@/assets/products/alkaline-500.png.asset.json";
+const alkaline = alkalineAsset.url;
 
 import jeera from "@/assets/products/jeera-masala-soda.webp";
 import orange from "@/assets/products/orange-soda.webp";
