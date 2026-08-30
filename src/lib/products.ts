@@ -3,8 +3,7 @@ import water500 from "@/assets/water-500.webp";
 import water1L from "@/assets/water-1l.webp";
 import water2L from "@/assets/water-2l.webp";
 import waterCan from "@/assets/purelyf-can-20l.webp";
-import alkalineAsset from "@/assets/products/alkaline-500.png.asset.json";
-const alkaline = alkalineAsset.url;
+import alkaline from "@/assets/products/alkaline-500.png";
 
 import jeera from "@/assets/products/jeera-masala-soda.webp";
 import orange from "@/assets/products/orange-soda.webp";
@@ -26,12 +25,9 @@ import redChilli1L from "@/assets/products/red-chilli-1l.png";
 import sachet10g from "@/assets/products/sachet-pouch-10g.png";
 import glass750 from "@/assets/products/purelyf-glass-750.png";
 import limbuPani from "@/assets/products/limbu-pani-300.png";
-import lichiSodaAsset from "@/assets/products/lichi-soda-200.png.asset.json";
-const lichiSoda = lichiSodaAsset.url;
-import soda750Asset from "@/assets/products/bubblz-750.png.asset.json";
-import soda650Asset from "@/assets/products/bubblz-650.png.asset.json";
-const plainSoda750 = soda750Asset.url;
-const plainSoda650 = soda650Asset.url;
+import lichiSoda from "@/assets/products/lichi-soda-200.png";
+import plainSoda750 from "@/assets/products/bubblz-750.png";
+import plainSoda650 from "@/assets/products/bubblz-650.png";
 import papaya from "@/assets/product-papaya.jpg";
 import readyToEat from "@/assets/product-ready-to-eat.jpg";
 
