@@ -4,9 +4,11 @@ import { Reveal } from "@/components/site/Reveal";
 import { CATEGORIES, PRODUCTS } from "@/lib/products";
 import { ArrowRight } from "lucide-react";
 import vegetablesImg from "@/assets/category-vegetables.jpg";
+import lichiSodaImg from "@/assets/products/lichi-soda-300.png";
 
 const CATEGORY_IMAGE_FALLBACK: Record<string, string> = {
   "fresh-vegetables": vegetablesImg,
+  "sodas-soft-drinks": lichiSodaImg,
 };
 
 export const Route = createFileRoute("/products/")({
