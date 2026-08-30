@@ -66,8 +66,8 @@ export function Footer() {
           </a>
           <span className="hidden sm:inline">·</span>
           <span>a division of</span>
-          <a href="https://nexurecorporation.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-wide text-foreground/80 transition hover:text-foreground">
-            Nexure Corporation
+          <a href="https://velixarcorporation.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-wide text-foreground/80 transition hover:text-foreground">
+            Velixar Corporation
           </a>
         </div>
       </div>
