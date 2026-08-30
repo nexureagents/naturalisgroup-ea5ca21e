@@ -490,7 +490,7 @@ function ExportSection() {
               <div className="text-xs uppercase tracking-[0.28em] text-emerald">Leaf &amp; Grains</div>
               <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">From farm gate to fresh shelves.</h3>
               <p className="mt-3 text-sm text-muted-foreground">24 fresh vegetables, ready-to-eat trays, jams &amp; juices — graded, washed, packed.</p>
-              <Link to="/products/fresh-vegetables" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
+              <Link to="/products/$category" params={{ category: "fresh-vegetables" }} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
                 Browse produce <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
