@@ -27,7 +27,7 @@ export const Route = createFileRoute("/products/$category")({
   ),
   errorComponent: ({ error }) => (
     <PageShell>
-      <PageHero title="Something went wrong" description={error.message} />
+      <PageHero title="Something went wrong" description={error instanceof Error ? error.message : String(error)} />
     </PageShell>
   ),
 });
