@@ -59,16 +59,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col items-center gap-1 border-t border-border/40 pt-6 text-center text-[11px] text-muted-foreground sm:flex-row sm:justify-center sm:gap-1.5">
-          <span>Crafted by</span>
-          <a href="https://blacktorquemedia.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-wide text-foreground/80 transition hover:text-foreground">
-            BlackTorque Media
-          </a>
-          <span className="hidden sm:inline">·</span>
-          <span>a division of</span>
-          <a href="https://velixarcorporation.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-wide text-foreground/80 transition hover:text-foreground">
-            Velixar Corporation
-          </a>
+        <div className="mt-6 border-t border-border/40 pt-6 text-center text-[11px] text-muted-foreground">
+          Made by <span className="font-medium tracking-wide text-foreground/80">Somraj Deb</span>, 24bcs10038
         </div>
       </div>
     </footer>
